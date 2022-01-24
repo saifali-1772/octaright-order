@@ -44,14 +44,16 @@ app.post('/submit',async (req, res) => {
 
     transporter.sendMail(mailOptions, function (error, info) {
         if (error) {
-            return res.send(error);
+            res.redirect('/')
+            // return res.send(error);
         } else {
-            return res.send('Email sent: ' + info.response);
+            res.redirect('/thanks')
+            // return res.send('Email sent: ' + info.response);
             // return res.json({ expires: expires })
         }
     });
 
-    res.redirect('/thanks')
+    
 })
 
 app.get('*', (req, res) => {
