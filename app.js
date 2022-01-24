@@ -19,16 +19,17 @@ app.get('/thanks', (req, res) => {
 })
 
 app.post('/submit',async (req, res) => {
+
     let transporter = await nodemailer.createTransport({
         service: 'gmail',
         auth: {
-            user: 'rutba.mart@gmail.com',
-            pass: 'rutba@123'
+            user: 'octaright@gmail.com',
+            pass: 'octaright#123'
         }
     });
 
     let mailOptions = {
-        from: '"Octaright"rutba.mart@gmail.com',
+        from: '"Octaright"octaright@gmail.com',
         to: 'saifalishaikh.dev@gmail.com',
         subject: 'New Website Order',
         text: `Hi Octaright
