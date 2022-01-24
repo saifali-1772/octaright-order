@@ -32,13 +32,13 @@ app.post('/submit',async (req, res) => {
         subject: 'New Website Order',
         text: `Hi Octaright
 
-   I am intrasted this offer, This my details
+I am intrasted this offer, This my details
    
-   Name : ${req.body.name}
-   Email : ${req.body.email}
-   Phone : ${req.body.phone}
-   
-   Plz call me sir.`
+Name : ${req.body.name}
+Email : ${req.body.email}
+Phone : ${req.body.phone}
+
+Plz call me sir.`
         // html: text_var
     };
 
@@ -52,8 +52,6 @@ app.post('/submit',async (req, res) => {
             // return res.json({ expires: expires })
         }
     });
-
-    
 })
 
 app.get('*', (req, res) => {
