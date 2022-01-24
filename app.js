@@ -26,7 +26,7 @@ app.post('/submit',async (req, res) => {
         }
     });
 
-    let mailOptions = await {
+    let mailOptions = {
         from: '"Octaright"octaright@gmail.com',
         to: 'saifalishaikh.dev@gmail.com',
         subject: 'New Website Order',
