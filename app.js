@@ -14,7 +14,6 @@ app.get('/', (req, res) => {
 })
 
 app.get('/thanks', (req, res) => {
-    // res.send(req.protocol)
     res.render('thanks')
 })
 
@@ -47,12 +46,8 @@ Plz call me sir.`
     transporter.sendMail(mailOptions, function (error, info) {
         if (!error) {
             res.redirect('/thanks')
-            // return res.send(error);
         } else {
-            res.send(error)
-            // res.redirect('/')
-            // return res.send('Email sent: ' + info.response);
-            // return res.json({ expires: expires })
+            res.redirect('/')
         }
     });
 })
