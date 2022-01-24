@@ -21,9 +21,6 @@ app.get('/thanks', (req, res) => {
 app.post('/submit',async (req, res) => {
     let transporter = await nodemailer.createTransport({
         service: 'gmail',
-        host: req.hostname,
-        port: port,
-        secure: false,
         auth: {
             user: 'octaright@gmail.com',
             pass: 'octaright@123'
@@ -48,7 +45,8 @@ Plz call me sir.`
 
     transporter.sendMail(mailOptions, function (error, info) {
         if (!error) {
-            res.redirect('/thanks')
+            res.send(error)
+            // res.redirect('/thanks')
             // return res.send(error);
         } else {
             res.redirect('/')
