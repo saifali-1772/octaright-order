@@ -14,12 +14,16 @@ app.get('/', (req, res) => {
 })
 
 app.get('/thanks', (req, res) => {
+    // res.send(req.protocol)
     res.render('thanks')
 })
 
 app.post('/submit',async (req, res) => {
     let transporter = await nodemailer.createTransport({
         service: 'gmail',
+        host: req.hostname,
+        port: port,
+        secure: false,
         auth: {
             user: 'octaright@gmail.com',
             pass: 'octaright@123'
