@@ -44,9 +44,9 @@ app.post('/submit',async (req, res) => {
 
     transporter.sendMail(mailOptions, function (error, info) {
         if (error) {
-            return res.json(error);
+            return res.send(error);
         } else {
-            return res.json('Email sent: ' + info.response);
+            return res.send('Email sent: ' + info.response);
             // return res.json({ expires: expires })
         }
     });
