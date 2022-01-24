@@ -18,7 +18,6 @@ app.get('/thanks', (req, res) => {
 })
 
 app.post('/submit',async (req, res) => {
-    // res.send("name:"+req.body.name)
     let transporter = await nodemailer.createTransport({
         service: 'gmail',
         auth: {
